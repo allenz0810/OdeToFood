@@ -1,5 +1,5 @@
---temp-output:C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\obj\Debug\netcoreapp1.0\
---out:C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\bin\Debug\netcoreapp1.0\OdeToFood.dll
+--temp-output:C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\bin\src\OdeToFood\obj\Debug\netcoreapp1.0\
+--out:C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\bin\src\OdeToFood\bin\Debug\netcoreapp1.0\OdeToFood.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -195,7 +195,7 @@
 --reference:C:\Users\Allen\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Allen\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Allen\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\obj\Debug\netcoreapp1.0\OdeToFooddotnet-compile.deps.json",OdeToFood.deps.json
+--resource:"C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\bin\src\OdeToFood\obj\Debug\netcoreapp1.0\OdeToFooddotnet-compile.deps.json",OdeToFood.deps.json
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Program.cs
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Startup.cs
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Controllers\AboutController.cs
