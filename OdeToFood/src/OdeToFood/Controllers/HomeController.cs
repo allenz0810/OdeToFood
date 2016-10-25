@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Entities;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
@@ -16,6 +17,7 @@ namespace OdeToFood.Controllers
             _greeter = greeter;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var model = new HomePageViewModel();
@@ -43,10 +45,10 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public IActionResult Create(RestaurantEditViewModel entity)
         {
-
             if (!ModelState.IsValid)
             {
                 return View();
@@ -56,8 +58,36 @@ namespace OdeToFood.Controllers
             newRestaurant.Name = entity.Name;
             newRestaurant.Cuisine = entity.Cuisine;
             newRestaurant = _restaurantData.Add(newRestaurant);
+            _restaurantData.Commit();
 
             return RedirectToAction("Details", new { id = newRestaurant.Id });
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Edit(int id)
+        {
+            var model = _restaurantData.Get(id);
+            if (model == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, RestaurantEditViewModel entity)
+        {
+            var restaurant = _restaurantData.Get(id);
+            if (ModelState.IsValid)
+            {
+                restaurant.Name = entity.Name;
+                restaurant.Cuisine = entity.Cuisine;
+                _restaurantData.Commit();
+                return RedirectToAction("Details", new { id = restaurant.Id });
+            }
+
+            return View(restaurant);
         }
     }
 }
