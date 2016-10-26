@@ -56,7 +56,7 @@ namespace OdeToFood
             {
                 app.UseExceptionHandler(new ExceptionHandlerOptions
                 {
-                    ExceptionHandler = context => context.Response.WriteAsync("Oops.")
+                    ExceptionHandler = context => context.Response.WriteAsync("Error, please contact IT guy to fix this issue.")
                 });
             }
 
