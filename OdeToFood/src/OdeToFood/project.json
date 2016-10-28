@@ -49,11 +49,14 @@
   "publishOptions": {
     "include": [
       "wwwroot",
-      "web.config"
+      "web.config",
+      "Views",
+      "appsetting.json"
     ]
   },
 
   "scripts": {
+    "prepare": "gulp minify",
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
 }

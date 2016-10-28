@@ -4,7 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <enviroment name="Staging, Production">
+        <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </enviroment>
+    <enviroment name="Development">
+        <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </enviroment>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -24,9 +29,15 @@
             @await Component.InvokeAsync("Greeting")
         </footer>
     </div>
-    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="~/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    
+    <enviroment name="Staging, Production">
+        <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    </enviroment>
+    <enviroment name="Development">
+        <script src="~/node_modules/jquery/dist/jquery.js"></script>
+        <script src="~/node_modules/jquery-validation/dist/jquery.js"></script>
+        <script src="~/node_modules/jquery-validation-unobtrusive/jquery.validate.js"></script>
+    </enviroment>
 </body>
 </html>
