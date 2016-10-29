@@ -4,10 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <enviroment name="Staging, Production">
+    <enviroment names="Staging, Production">
         <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     </enviroment>
-    <enviroment name="Development">
+    <enviroment names="Development">
         <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     </enviroment>
 </head>
@@ -29,12 +29,12 @@
             @await Component.InvokeAsync("Greeting")
         </footer>
     </div>
-    <enviroment name="Staging, Production">
+    <enviroment names="Staging, Production">
         <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
         <script src="~/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </enviroment>
-    <enviroment name="Development">
+    <enviroment names="Development">
         <script src="~/node_modules/jquery/dist/jquery.js"></script>
         <script src="~/node_modules/jquery-validation/dist/jquery.js"></script>
         <script src="~/node_modules/jquery-validation-unobtrusive/jquery.validate.js"></script>

@@ -4,6 +4,7 @@
 }
 
 <h1>@Model.CurrentMessage</h1>
+
 @foreach (var restaurant in Model.Restaurants)
 {
     @Html.Partial("_summary", restaurant)
