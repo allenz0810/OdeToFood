@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.1.0-preview1-001100-00",
+      "version": "1.0.0",
       "type": "platform"
     },
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -18,8 +18,7 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-    "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1"
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
   },
 
   "tools": {
