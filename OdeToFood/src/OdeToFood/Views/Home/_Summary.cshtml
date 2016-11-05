@@ -1,8 +1,8 @@
 ﻿@model Restaurant
 <div class="panel panel-default">
-    <h3 class="panel-heading">@Model.Name</h3>
+    <h3 class="panel-heading">@Model.Name <span class="glyphicon glyphicon-glass" aria-hidden="true"></span></h3>
     <div class="panel-body">
-        Cuisine: @Model.Cuisine
+        Cuisine: @Model.Cuisine 
     </div>
     <div class="panel-footer">
         <a class="btn btn-primary" asp-action="Details" asp-route-id="@Model.Id">Detail</a>
