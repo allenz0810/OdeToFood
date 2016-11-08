@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OdeToFood.Configs;
 using OdeToFood.Entities;
 using OdeToFood.Services;
 
@@ -14,6 +16,9 @@ namespace OdeToFood
 {
     public class Startup
     {
+        private MapperConfiguration _mapperConfiguration { get; set; }
+        public Microsoft.Extensions.Configuration.IConfiguration Configuration { get; set; }
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -21,9 +26,12 @@ namespace OdeToFood
                             .AddJsonFile("appsettings.json")
                             .AddEnvironmentVariables();
             Configuration = builder.Build();
-        }
 
-        public IConfiguration Configuration { get; set; }
+            _mapperConfiguration = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AutoMapperConfiguration());
+            });
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
@@ -37,6 +45,8 @@ namespace OdeToFood
                     options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<OdeToFoodDBContext>();
+
+            services.AddSingleton<IMapper>(sp => _mapperConfiguration.CreateMapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

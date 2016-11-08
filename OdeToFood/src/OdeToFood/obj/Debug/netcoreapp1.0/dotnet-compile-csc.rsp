@@ -203,6 +203,7 @@
 -resource:"C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\obj\Debug\netcoreapp1.0\OdeToFooddotnet-compile.deps.json",OdeToFood.deps.json
 "C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Program.cs"
 "C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Startup.cs"
+"C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Configs\AutoMapperConfiguration.cs"
 "C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Controllers\AboutController.cs"
 "C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Controllers\AccountController.cs"
 "C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\Controllers\HomeController.cs"
