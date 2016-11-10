@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using OdeToFood.Entities;
 using OdeToFood.ViewModels;
+using System.Collections.Generic;
 
 namespace OdeToFood.Configs
 {
@@ -8,7 +9,14 @@ namespace OdeToFood.Configs
     {
         protected override void Configure()
         {
-            //CreateMap<Restaurant, HomePageViewModel>();
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<List<Restaurant>, HomePageViewModel>()
+                    .ForMember(dest => dest.Restaurants, opt => opt.MapFrom(src => src))
+                    .ForMember(dest => dest.CurrentMessage, opt => opt.Ignore())
+                    .ReverseMap();
+            });
+            
         }
     }
 }

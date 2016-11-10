@@ -20,8 +20,7 @@ namespace OdeToFood.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            var model = new HomePageViewModel();
-            model.Restaurants = _restaurantData.GetAll();
+            var model = _restaurantData.GetHomePageViewModel();
             model.CurrentMessage = _greeter.GetGreeting();
             return View(model);
         }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using OdeToFood.ViewModels;
+using AutoMapper;
 
 namespace OdeToFood.Services
 {
@@ -13,6 +15,8 @@ namespace OdeToFood.Services
         IEnumerable<Restaurant> GetAll();
 
         Restaurant Get(int id);
+
+        HomePageViewModel GetHomePageViewModel();
 
         void Commit();
     }
@@ -40,6 +44,11 @@ namespace OdeToFood.Services
         public Restaurant Get(int id)
         {
             return _context.Restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
+        public HomePageViewModel GetHomePageViewModel()
+        {
+            return Mapper.Map<HomePageViewModel>(GetAll().ToList());
         }
 
         public IEnumerable<Restaurant> GetAll()
@@ -79,6 +88,11 @@ namespace OdeToFood.Services
         }
 
         public void Commit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public HomePageViewModel GetHomePageViewModel()
         {
             throw new NotImplementedException();
         }
