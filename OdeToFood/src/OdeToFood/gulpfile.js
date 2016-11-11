@@ -1,6 +1,14 @@
 ﻿var gulp = require('gulp');
-var uglify = require('gulp-uglify');
+var del = require('del');
 
-gulp.task('minify', function () {
-    return gulp.sec('node_modules/*').pipe(uglify()).pipe(gulp.dest('wwwroot/lib/_app'));
+var paths = {
+    scripts: ['scripts/**/*.js', 'scripts/**/*.ts', 'scripts/**/*.map'],
+};
+
+gulp.task('clean', function () {
+    return del(['wwwroot/scripts/**/*']);
+});
+
+gulp.task('default', function () {
+    gulp.src(paths.scripts).pipe(gulp.dest('wwwroot/scripts'))
 });
