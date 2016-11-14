@@ -7,9 +7,9 @@
     "target": "es5"
   },
   "files": [
-    "./app.ts",
-    "./model.ts",
-    "./main.ts"
+    "app.ts",
+    "model.ts",
+    "main.ts"
   ],
   "exclude": [
     "node_modules",

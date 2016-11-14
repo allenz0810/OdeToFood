@@ -20,14 +20,16 @@
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1",
-    "AutoMapper": "5.1.1"
+    "AutoMapper": "5.1.1",
+    "Microsoft.TypeScript.MSBuild": "2.0.6",
+    "Microsoft.TypeScript.Compiler": "2.1.1-rc"
   },
 
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview2-final"
-    } 
+    }
   },
 
   "frameworks": {

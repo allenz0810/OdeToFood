@@ -76,6 +76,8 @@ namespace OdeToFood
 
             app.UseIdentity();
 
+
+
             app.UseMvc(ConfigureRoutes);
         }
 
