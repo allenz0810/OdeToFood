@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noEmitOnError": true,
-    "removeComments": false,
     "sourceMap": true,
-    "target": "es5"
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es5",
+    "lib": [
+      "es2015",
+      "es5",
+      "dom"
+    ]
   },
   "files": [
-    "app.ts",
-    "model.ts",
-    "main.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "wwwroot"
+    "./app.ts",
+    "./model.ts",
+    "./main.ts"
   ],
   "compileOnSave": true
 }

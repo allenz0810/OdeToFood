@@ -11,7 +11,7 @@
     "jquery": "~3.1.1",
     "jquery-validation": "~1.15.1",
     "jquery-validation-unobtrusive": "~3.2.6",
-    "angular2": "2.0.0-beta.11",
+    "angular2": "~2.0.0-beta.17",
     "systemjs": "0.19.24",
     "rxjs": "~5.0.0-rc.2",
     "typescript": "~2.0.9"
