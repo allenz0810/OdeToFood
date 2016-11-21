@@ -1,7 +1,8 @@
 (function (global) {
     System.config({
+        baseURL: "/",
         paths: {
-            'npm:': 'libs'
+            'npm:': 'libs/'
         },
         map: {
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -21,7 +22,7 @@
         },
         packages: {
             app: {
-                main: 'main.js',
+                main: './main.js',
                 defaultExtension: 'js'
             },
             rxjs: {

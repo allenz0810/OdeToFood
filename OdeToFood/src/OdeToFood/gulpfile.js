@@ -26,6 +26,11 @@ gulp.task('restore:systemjs', function () {
         'node_modules/systemjs/dist/*.js'
     ]).pipe(gulp.dest(libs + 'systemjs'));
 });
+gulp.task('restore:es6-shim', function () {
+    gulp.src([
+        'node_modules/when/es6-shim/*.js'
+    ]).pipe(gulp.dest(libs + 'es6-shim'));
+});
 gulp.task('restore:rxjs', function () {
     gulp.src([
         'node_modules/rxjs/**/*.js'
@@ -58,5 +63,6 @@ gulp.task('restore', [
     'restore:angular-in-memory-web-api',
     'restore:angular',
     'restore:bootstrap',
-    'restore:systemjs'
+    'restore:systemjs',
+    'restore:es6-shim'
 ]);

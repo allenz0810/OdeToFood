@@ -9,26 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { HomeIndexComponent } from './home/index.component';
-import { AppRoutingModule } from './app-routing.module';
 export var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         NgModule({
-            imports: [
-                BrowserModule,
-                FormsModule,
-                HttpModule,
-                AppRoutingModule
-            ],
-            declarations: [
-                AppComponent,
-                HomeIndexComponent
-            ],
+            imports: [BrowserModule],
+            declarations: [AppComponent],
             bootstrap: [AppComponent]
         }), 
         __metadata('design:paramtypes', [])

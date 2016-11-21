@@ -14,7 +14,7 @@ export var AppComponent = (function () {
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
-            template: "<h1>Hello from angular </h1>\n  <nav>\n  <a routerLink=\"/home/index\" routerLinkActive=\"active\">index</a>\n  </nav>\n  <router-outlet> </router-outlet>"
+            template: "<h1>Hello Angular</h1>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
