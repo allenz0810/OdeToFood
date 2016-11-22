@@ -70,6 +70,7 @@ namespace OdeToFood
                 });
             }
 
+            app.UseStaticFiles();
             app.UseFileServer();
 
             app.UseNodeModules(env.ContentRootPath);

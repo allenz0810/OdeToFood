@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,23 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { HomeIndexComponent } from './home/index.component';
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var index_component_1 = require('./home/index.component');
 var routes = [
     { path: '', redirectTo: '/home/index', pathMatch: 'full' },
-    { path: 'home/index', component: HomeIndexComponent }
+    { path: 'home/index', component: index_component_1.HomeIndexComponent }
 ];
-export var AppRoutingModule = (function () {
+var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        NgModule({
-            imports: [RouterModule.forRoot(routes)],
-            exports: [RouterModule]
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forRoot(routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
     ], AppRoutingModule);
     return AppRoutingModule;
 }());
-//# sourceMappingURL=C:/GitHub/OdeToFood/OdeToFood/src/OdeToFood/app-routing.module.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=app-routing.module.js.map

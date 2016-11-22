@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-export var HomeIndexComponent = (function () {
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
+var HomeIndexComponent = (function () {
     function HomeIndexComponent(route, location) {
         this.route = route;
         this.location = location;
@@ -21,12 +22,13 @@ export var HomeIndexComponent = (function () {
         this.location.back();
     };
     HomeIndexComponent = __decorate([
-        Component({
+        core_1.Component({
             selector: 'home-index',
             templateUrl: 'index.component.html'
         }), 
-        __metadata('design:paramtypes', [ActivatedRoute, Location])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
     ], HomeIndexComponent);
     return HomeIndexComponent;
 }());
-//# sourceMappingURL=C:/GitHub/OdeToFood/OdeToFood/src/OdeToFood/home/index.component.js.map
+exports.HomeIndexComponent = HomeIndexComponent;
+//# sourceMappingURL=index.component.js.map
