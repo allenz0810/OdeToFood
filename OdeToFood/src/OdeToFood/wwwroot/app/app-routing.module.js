@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var index_component_1 = require('./home/index.component');
 var routes = [
-    { path: '', redirectTo: '/home/index', pathMatch: 'full' },
-    { path: 'home/index', component: index_component_1.HomeIndexComponent }
+    { path: '', redirectTo: '/app/home/index', pathMatch: 'full' },
+    { path: 'app/home/index', component: index_component_1.HomeIndexComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

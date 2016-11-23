@@ -2,6 +2,7 @@
 
 <html>
 <head>
+    <base href="/">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <enviroment names="Staging, Production">
@@ -23,7 +24,6 @@
         </div>
     </nav>
     <div class="container">
-        <my-app>loading.....</my-app>
         @RenderBody()
         <footer>
             @RenderSection("footer", false)

@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var http_1 = require('@angular/http');
+var HomeService = (function () {
+    function HomeService(http) {
+        this.http = http;
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.heroesUrl = 'app/home'; // URL to web api
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: '<h1>My First Angular App</h1><router-outlet></router-outlet>'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    HomeService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], HomeService);
+    return HomeService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HomeService = HomeService;
+//# sourceMappingURL=home.service.js.map

@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 @Component({
     selector: 'home-index',
-    templateUrl: 'index.component.html'
+    templateUrl: 'app/home/index.component.html'
 })
 export class HomeIndexComponent implements OnInit {
 

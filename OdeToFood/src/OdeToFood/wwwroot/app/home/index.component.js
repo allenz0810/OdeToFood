@@ -24,7 +24,7 @@ var HomeIndexComponent = (function () {
     HomeIndexComponent = __decorate([
         core_1.Component({
             selector: 'home-index',
-            templateUrl: 'index.component.html'
+            templateUrl: 'app/home/index.component.html'
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
     ], HomeIndexComponent);
