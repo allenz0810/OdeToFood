@@ -15,6 +15,7 @@ var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
 var index_component_1 = require('./home/index.component');
+var create_component_1 = require('./home/create.component');
 var home_service_1 = require('./home/home.service');
 var AppModule = (function () {
     function AppModule() {
@@ -29,7 +30,8 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                index_component_1.HomeIndexComponent
+                index_component_1.HomeIndexComponent,
+                create_component_1.HomeCreateComponent
             ],
             providers: [home_service_1.HomeService],
             bootstrap: [app_component_1.AppComponent]

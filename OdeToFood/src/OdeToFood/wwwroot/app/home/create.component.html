@@ -1,0 +1,16 @@
+﻿<div>
+    <h1>Create Restaurant</h1>
+    <div>
+        <div>
+            <label>Restaurant Name: </label>
+            <input #name />
+        </div>
+        <div>
+            <label>Cuisine: </label>
+            <input #cuisine />
+        </div>
+        <div>
+            <button (click)="add(name.value, cuisine.value); name.value = ''; cuisine.value = ''">Save angular version</button>
+        </div>
+    </div>
+</div>
