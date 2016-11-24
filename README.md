@@ -1,2 +1,3 @@
 # OdeToFood
-dot net core application for reviewing restaurants
+
+dot net core application with angular 2 and type script.
