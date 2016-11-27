@@ -5,9 +5,9 @@ import { HomeIndexComponent } from './home/index.component';
 import { HomeCreateComponent } from './home/create.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home/index', pathMatch: 'full' },
-    { path: 'home/index', component: HomeIndexComponent },
-    { path: 'home/create', component: HomeCreateComponent }
+    { path: '', redirectTo: '/Home/Index', pathMatch: 'full' },
+    { path: 'Home/Index', component: HomeIndexComponent },
+    { path: 'Home/Create', component: HomeCreateComponent }
 ];
 
 @NgModule({
