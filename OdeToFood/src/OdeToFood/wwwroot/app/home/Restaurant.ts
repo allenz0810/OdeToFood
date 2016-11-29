@@ -1,5 +1,7 @@
-﻿export class Restaurant {
+﻿import { Cuisine } from './Cuisine';
+
+export class Restaurant {
     id: number;
     name: string;
-    cuisine: number;
+    cuisine: Cuisine;
 }

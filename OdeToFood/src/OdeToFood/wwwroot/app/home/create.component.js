@@ -15,6 +15,14 @@ var HomeCreateComponent = (function () {
     function HomeCreateComponent(route, location) {
         this.route = route;
         this.location = location;
+        this.Data = "This is a data coming from create";
+        this.cuisines = [
+            { key: "None", value: 0 },
+            { key: "Italian", value: 1 },
+            { key: "French", value: 2 },
+            { key: "Japanese", value: 3 },
+            { key: "Amercian", value: 4 }
+        ];
     }
     HomeCreateComponent.prototype.ngOnInit = function () {
     };

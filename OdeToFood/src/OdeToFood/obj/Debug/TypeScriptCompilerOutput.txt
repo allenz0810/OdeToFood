@@ -2,6 +2,8 @@ C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\app.component.js
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\app.component.js.map
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\index.component.js
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\index.component.js.map
+C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\Cuisine.js
+C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\Cuisine.js.map
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\Restaurant.js
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\Restaurant.js.map
 C:\GitHub\OdeToFood\OdeToFood\src\OdeToFood\wwwroot\app\home\create.component.js
