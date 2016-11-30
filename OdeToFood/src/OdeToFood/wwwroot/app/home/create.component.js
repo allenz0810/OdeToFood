@@ -12,34 +12,38 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var HomeCreateComponent = (function () {
-    function HomeCreateComponent(route, location) {
-        this.route = route;
-        this.location = location;
-        this.Data = "This is a data coming from create";
-        this.cuisines = [
-            { key: "None", value: 0 },
-            { key: "Italian", value: 1 },
-            { key: "French", value: 2 },
-            { key: "Japanese", value: 3 },
-            { key: "Amercian", value: 4 }
-        ];
+    function HomeCreateComponent() {
     }
-    HomeCreateComponent.prototype.ngOnInit = function () {
-    };
-    HomeCreateComponent.prototype.goBack = function () {
-        this.location.back();
-    };
-    HomeCreateComponent.prototype.add = function (name, cuisine) {
-        alert("name: (" + name + "), cuisine: (" + cuisine + ")");
-    };
     HomeCreateComponent = __decorate([
         core_1.Component({
             selector: 'home-create',
             templateUrl: 'app/home/create.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [])
     ], HomeCreateComponent);
     return HomeCreateComponent;
 }());
 exports.HomeCreateComponent = HomeCreateComponent;
+var restaurant = {};
+Data: string = "This is a data coming from create";
+cuisines: KeyValuePair < number > [];
+[
+    { key: "None", value: 0 },
+    { key: "Italian", value: 1 },
+    { key: "French", value: 2 },
+    { key: "Japanese", value: 3 },
+    { key: "Amercian", value: 4 }
+];
+constructor(private, route, router_1.ActivatedRoute, private, location, common_1.Location);
+{ }
+ngOnInit();
+void {};
+goBack();
+void {
+    this: .location.back()
+};
+add(name, string, cuisine, string);
+void {
+    alert: function () { }, "name: (": +name + "), cuisine: (" + cuisine + ")"
+};
 //# sourceMappingURL=create.component.js.map

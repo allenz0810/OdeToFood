@@ -10,7 +10,9 @@ import { KeyValuePair } from './keyvaluepair';
     templateUrl: 'app/home/create.component.html'
 })
 export class HomeCreateComponent implements OnInit {
-    restaurant: Restaurant;
+
+    let restaurant: Restaurant = {};
+
     Data: string = "This is a data coming from create";
     cuisines: KeyValuePair<number>[] = [
         { key: "None", value: 0 },
