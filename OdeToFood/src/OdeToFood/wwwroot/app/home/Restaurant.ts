@@ -2,4 +2,6 @@
     id: number;
     name: string;
     cuisine: number;
+
+    constructor() {}
 }

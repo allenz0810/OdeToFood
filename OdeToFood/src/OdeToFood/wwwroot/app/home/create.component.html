@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div [hidden]="submitted">
         <h1>Create Restaurant</h1>
-        <form (ngSubmit)="onSubmit()" #restaurantForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #restaurantForm="ngForm" novalidate>
             <div class="form-group">
                 <label for="name">Restaurant Name:</label>
                 <input type="text" class="form-control" id="name"
@@ -17,8 +17,8 @@
                 <label for="power">Cuisine:</label>
                 <select class="form-control" id="cuisine"
                         required
-                        [(ngModel)]="restaurant.cuisine" name="cuisine"
-                        #restaurant.cuisine="ngModel">
+                        [(ngModel)]="cuisine[i]" name="cuisine"
+                        #cuisine="ngModel">
                     <option *ngFor="let c of cuisines"
                             [value]="c.value">
                         {{c.key}}

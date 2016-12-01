@@ -11,7 +11,7 @@ import { KeyValuePair } from './keyvaluepair';
 })
 export class HomeCreateComponent implements OnInit {
 
-    let restaurant: Restaurant = {};
+    restaurant = new Restaurant();
 
     Data: string = "This is a data coming from create";
     cuisines: KeyValuePair<number>[] = [
