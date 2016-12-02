@@ -12,8 +12,10 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var restaurant_1 = require('./restaurant');
+var home_service_1 = require('./home.service');
 var HomeCreateComponent = (function () {
-    function HomeCreateComponent(route, location) {
+    function HomeCreateComponent(homeService, route, location) {
+        this.homeService = homeService;
         this.route = route;
         this.location = location;
         this.restaurant = new restaurant_1.Restaurant();
@@ -28,6 +30,10 @@ var HomeCreateComponent = (function () {
     }
     HomeCreateComponent.prototype.ngOnInit = function () {
     };
+    HomeCreateComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.homeService.create(this.restaurant).then(function () { return _this.goBack(); });
+    };
     HomeCreateComponent.prototype.goBack = function () {
         this.location.back();
     };
@@ -39,7 +45,7 @@ var HomeCreateComponent = (function () {
             selector: 'home-create',
             templateUrl: 'app/home/create.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
     ], HomeCreateComponent);
     return HomeCreateComponent;
 }());

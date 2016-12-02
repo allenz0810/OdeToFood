@@ -17,7 +17,7 @@
                 <label for="power">Cuisine:</label>
                 <select class="form-control" id="cuisine"
                         required
-                        [(ngModel)]="cuisine[i]" name="cuisine"
+                        [(ngModel)]="restaurant.cuisine" name="cuisine"
                         #cuisine="ngModel">
                     <option *ngFor="let c of cuisines"
                             [value]="c.value">

@@ -18,8 +18,15 @@ var HomeService = (function () {
     function HomeService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.heroesUrl = 'app/home'; // URL to web api
+        this.homeUrl = 'home'; // URL to web api
     }
+    HomeService.prototype.create = function (data) {
+        return this.http
+            .post(this.homeUrl + '/Create', JSON.stringify(data), { headers: this.headers })
+            .toPromise()
+            .then(function (res) { return res.json().data; })
+            .catch(this.handleError);
+    };
     HomeService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};

@@ -44,15 +44,9 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
+        //[Authorize]
         public IActionResult Create(RestaurantEditViewModel entity)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
             var newRestaurant = new Restaurant();
             newRestaurant.Name = entity.Name;
             newRestaurant.Cuisine = entity.Cuisine;

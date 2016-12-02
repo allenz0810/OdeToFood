@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Restaurant } from './restaurant';
 import { KeyValuePair } from './keyvaluepair';
+import { HomeService } from './home.service';
 
 @Component({
     selector: 'home-create',
@@ -23,11 +24,16 @@ export class HomeCreateComponent implements OnInit {
     ];
 
     constructor(
+        private homeService: HomeService,
         private route: ActivatedRoute,
         private location: Location
     ) { }
 
     ngOnInit(): void {
+    }
+
+    onSubmit() {
+        this.homeService.create(this.restaurant).then(() => this.goBack());
     }
 
     goBack(): void {
