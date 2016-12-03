@@ -71,7 +71,6 @@ namespace OdeToFood
                 });
             }
             
-            app.UseIISPlatformHandler();
             app.UseDefaultFiles();
             app.UseStaticFiles();
 

@@ -18,12 +18,14 @@ var HomeService = (function () {
     function HomeService(http) {
         this.http = http;
         //private headers = new Headers({ 'Content-Type': 'application/json' });
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         this.homeUrl = 'home'; // URL to web api
     }
     HomeService.prototype.create = function (data) {
+        var content = new http_1.URLSearchParams();
+        content.set('name', data.name);
         return this.http
-            .post(this.homeUrl + '/Create', "name=myusername", { headers: this.headers })
+            .post(this.homeUrl + '/Create', content.toString(), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);

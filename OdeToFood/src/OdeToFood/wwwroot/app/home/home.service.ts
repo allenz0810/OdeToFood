@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { Headers, Http, Response, URLSearchParams } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { Restaurant } from './restaurant';
@@ -12,16 +12,18 @@ import 'rxjs/add/operator/catch';
 export class HomeService {
 
     //private headers = new Headers({ 'Content-Type': 'application/json' });
-    private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'});
     
     private homeUrl = 'home';  // URL to web api
 
     constructor(private http: Http) { }
 
     create(data: Restaurant): Promise<void> {
+        let content = new URLSearchParams();
+        content.set('name', data.name);
         return this.http
             .post(this.homeUrl + '/Create',
-                "name=myusername",
+                content.toString(),
                 { headers: this.headers })
             .toPromise()
             .then(res => res.json().data)
