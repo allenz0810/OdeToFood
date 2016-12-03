@@ -17,16 +17,24 @@ require('rxjs/add/operator/catch');
 var HomeService = (function () {
     function HomeService(http) {
         this.http = http;
+        //private headers = new Headers({ 'Content-Type': 'application/json' });
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.homeUrl = 'home'; // URL to web api
     }
     HomeService.prototype.create = function (data) {
         return this.http
-            .post(this.homeUrl + '/Create', JSON.stringify(data), { headers: this.headers })
+            .post(this.homeUrl + '/Create', "name=myusername", { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
+    //    var headers = new Headers();
+    //headers.append('Content-Type', '');
+    //this.http.post('your-post-url-goes-here',
+    //    { firstName: 'Joe', lastName: 'Smith' },
+    //    { headers: headers })
+    //    .map((res: Response) => res.json())
+    //    .subscribe((res: Person) => this.postResponse = res);
     HomeService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};

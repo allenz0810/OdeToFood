@@ -11,18 +11,30 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class HomeService {
 
+    //private headers = new Headers({ 'Content-Type': 'application/json' });
     private headers = new Headers({ 'Content-Type': 'application/json' });
+    
     private homeUrl = 'home';  // URL to web api
 
     constructor(private http: Http) { }
 
     create(data: Restaurant): Promise<void> {
         return this.http
-            .post(this.homeUrl + '/Create', JSON.stringify(data), { headers: this.headers })
+            .post(this.homeUrl + '/Create',
+                "name=myusername",
+                { headers: this.headers })
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);
     }
+
+//    var headers = new Headers();
+//headers.append('Content-Type', '');
+//this.http.post('your-post-url-goes-here',
+//    { firstName: 'Joe', lastName: 'Smith' },
+//    { headers: headers })
+//    .map((res: Response) => res.json())
+//    .subscribe((res: Person) => this.postResponse = res);
 
     private extractData(res: Response) {
         let body = res.json();

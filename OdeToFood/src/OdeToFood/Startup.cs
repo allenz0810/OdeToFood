@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNet.IISPlatformHandler;
 using OdeToFood.Configs;
 using OdeToFood.Entities;
 using OdeToFood.Services;
@@ -69,17 +70,31 @@ namespace OdeToFood
                     ExceptionHandler = context => context.Response.WriteAsync("Error, please contact IT guy to fix this issue 2.")
                 });
             }
-
+            
+            app.UseIISPlatformHandler();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseFileServer();
 
             app.UseNodeModules(env.ContentRootPath);
 
             app.UseIdentity();
 
-
-
             app.UseMvc(ConfigureRoutes);
+
+
+            //app.UseStaticFiles();
+            //app.UseGlimpse();
+
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default",
+            //                    "{controller=Home}/{action=Index}/{id?}");
+            //    routes.MapRoute("spa-fallback",
+            //                    "{*anything}",
+            //                    new { controller = "Home", action = "Index" });
+            //    routes.MapWebApiRoute("defaultApi",
+            //                          "api/{controller}/{id?}");
+            //});
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)

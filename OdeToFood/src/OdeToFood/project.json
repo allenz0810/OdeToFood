@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.1",
@@ -22,8 +22,12 @@
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1",
     "AutoMapper": "5.1.1",
     "Microsoft.TypeScript.MSBuild": "2.0.6",
-    "Microsoft.TypeScript.Compiler": "2.1.1-rc"
+    "Microsoft.TypeScript.Compiler": "2.1.1-rc",
+    "Microsoft.Net.Http": "2.2.22",
+    "Microsoft.AspNet.IISPlatformHandler" : "1.0.0-rc1-final"
+
   },
+  
 
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
