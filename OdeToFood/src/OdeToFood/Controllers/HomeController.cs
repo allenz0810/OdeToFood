@@ -44,16 +44,15 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(string name)
+        public IActionResult Create(string name, int cuisine)
         {
-            //var newRestaurant = new Restaurant();
-            //newRestaurant.Name = entity.Name;
-            //newRestaurant.Cuisine = entity.Cuisine;
-            //newRestaurant = _restaurantData.Add(newRestaurant);
-            //_restaurantData.Commit();
+            var newRestaurant = new Restaurant();
+            newRestaurant.Name = name;
+            newRestaurant.Cuisine = (CuisineType)cuisine;
+            newRestaurant = _restaurantData.Add(newRestaurant);
+            _restaurantData.Commit();
 
-            //return RedirectToAction("Details", new { id = newRestaurant.Id });
-            return View();
+            return RedirectToAction("Details", new { id = newRestaurant.Id });
         }
 
         [HttpGet]
