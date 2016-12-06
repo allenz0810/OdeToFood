@@ -22,21 +22,16 @@ var HomeService = (function () {
         this.homeUrl = 'home'; // URL to web api
     }
     HomeService.prototype.create = function (data) {
+        var _this = this;
         var content = new http_1.URLSearchParams();
         content.set('name', data.name);
+        content.set('cuisine', data.cuisine.toString());
         return this.http
             .post(this.homeUrl + '/Create', content.toString(), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
-            .catch(this.handleError);
+            .then(function (src) { return _this.extractData(src); })
+            .catch(function (err) { return _this.handleError(err); });
     };
-    //    var headers = new Headers();
-    //headers.append('Content-Type', '');
-    //this.http.post('your-post-url-goes-here',
-    //    { firstName: 'Joe', lastName: 'Smith' },
-    //    { headers: headers })
-    //    .map((res: Response) => res.json())
-    //    .subscribe((res: Person) => this.postResponse = res);
     HomeService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};

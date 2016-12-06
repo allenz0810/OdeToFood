@@ -18,25 +18,18 @@ export class HomeService {
 
     constructor(private http: Http) { }
 
-    create(data: Restaurant): Promise<void> {
+    create(data: Restaurant): Promise<any> {
         let content = new URLSearchParams();
         content.set('name', data.name);
+        content.set('cuisine', data.cuisine.toString());
         return this.http
             .post(this.homeUrl + '/Create',
-                content.toString(),
-                { headers: this.headers })
+            content.toString(),
+            { headers: this.headers })
             .toPromise()
-            .then(res => res.json().data)
-            .catch(this.handleError);
+            .then(src => this.extractData(src))
+            .catch(err => this.handleError(err));
     }
-
-//    var headers = new Headers();
-//headers.append('Content-Type', '');
-//this.http.post('your-post-url-goes-here',
-//    { firstName: 'Joe', lastName: 'Smith' },
-//    { headers: headers })
-//    .map((res: Response) => res.json())
-//    .subscribe((res: Person) => this.postResponse = res);
 
     private extractData(res: Response) {
         let body = res.json();
