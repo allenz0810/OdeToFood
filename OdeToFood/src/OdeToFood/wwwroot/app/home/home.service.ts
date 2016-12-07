@@ -31,6 +31,15 @@ export class HomeService {
             .catch(err => this.handleError(err));
     }
 
+    getAll(): Promise<any> {
+        return this.http
+            .get(this.homeUrl + '/GetAll',
+            { headers: this.headers })
+            .toPromise()
+            .then(src => this.extractData(src))
+            .catch(err => this.handleError(err));
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body.data || {};

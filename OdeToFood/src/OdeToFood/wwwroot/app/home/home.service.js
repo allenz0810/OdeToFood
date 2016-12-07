@@ -32,6 +32,14 @@ var HomeService = (function () {
             .then(function (src) { return _this.extractData(src); })
             .catch(function (err) { return _this.handleError(err); });
     };
+    HomeService.prototype.getAll = function () {
+        var _this = this;
+        return this.http
+            .get(this.homeUrl + '/GetAll', { headers: this.headers })
+            .toPromise()
+            .then(function (src) { return _this.extractData(src); })
+            .catch(function (err) { return _this.handleError(err); });
+    };
     HomeService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};

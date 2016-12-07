@@ -11,11 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
+var home_service_1 = require('./home.service');
 var HomeIndexComponent = (function () {
-    function HomeIndexComponent(route, location) {
+    function HomeIndexComponent(homeService, route, location) {
+        this.homeService = homeService;
         this.route = route;
         this.location = location;
     }
+    HomeIndexComponent.prototype.getAll = function () {
+        var _this = this;
+        this.homeService.getAll().then(function (data) { return (_this.restaurants = data); });
+    };
     HomeIndexComponent.prototype.ngOnInit = function () {
     };
     HomeIndexComponent.prototype.goBack = function () {
@@ -26,7 +32,7 @@ var HomeIndexComponent = (function () {
             selector: 'home-index',
             templateUrl: 'app/home/index.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
     ], HomeIndexComponent);
     return HomeIndexComponent;
 }());
