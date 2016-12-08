@@ -17,10 +17,11 @@ var HomeIndexComponent = (function () {
         this.homeService = homeService;
         this.route = route;
         this.location = location;
+        this.getAll();
     }
     HomeIndexComponent.prototype.getAll = function () {
         var _this = this;
-        this.homeService.getAll().then(function (data) { return (_this.restaurants = data); });
+        this.homeService.getAll().then(function (data) { return (_this.restaurants = data.restaurants); });
     };
     HomeIndexComponent.prototype.ngOnInit = function () {
     };

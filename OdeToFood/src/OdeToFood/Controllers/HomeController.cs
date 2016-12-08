@@ -59,7 +59,7 @@ namespace OdeToFood.Controllers
         public JsonResult GetAll()
         {
             var model = _restaurantData.GetHomePageViewModel();
-            return Json(new { result = model });
+            return Json(new { data = model });
         }
 
         [HttpGet]

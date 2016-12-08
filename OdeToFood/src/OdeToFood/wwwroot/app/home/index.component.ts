@@ -20,11 +20,13 @@ export class HomeIndexComponent implements OnInit {
         private route: ActivatedRoute,
         private location: Location
     ) {
-
+        this.getAll();
     }
 
     getAll(): void {
-        this.homeService.getAll().then(data => (this.restaurants = data));
+        this.homeService.getAll().then(
+            data => (this.restaurants = data.restaurants)
+        );
     }
 
     ngOnInit(): void {
