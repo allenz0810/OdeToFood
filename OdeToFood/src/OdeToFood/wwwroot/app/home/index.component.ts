@@ -23,10 +23,14 @@ export class HomeIndexComponent implements OnInit {
         this.getAll();
     }
 
-    getAll(): void {
+    getAll = (): void => {
         this.homeService.getAll().then(
-            data => (this.restaurants = data.restaurants)
+            data => this.setRestaurants(data)
         );
+    }
+
+    setRestaurants = (data): void => {
+        this.restaurants = data.restaurants;
     }
 
     ngOnInit(): void {

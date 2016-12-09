@@ -14,15 +14,18 @@ var common_1 = require('@angular/common');
 var home_service_1 = require('./home.service');
 var HomeIndexComponent = (function () {
     function HomeIndexComponent(homeService, route, location) {
+        var _this = this;
         this.homeService = homeService;
         this.route = route;
         this.location = location;
+        this.getAll = function () {
+            _this.homeService.getAll().then(function (data) { return _this.setRestaurants(data); });
+        };
+        this.setRestaurants = function (data) {
+            _this.restaurants = data.restaurants;
+        };
         this.getAll();
     }
-    HomeIndexComponent.prototype.getAll = function () {
-        var _this = this;
-        this.homeService.getAll().then(function (data) { return (_this.restaurants = data.restaurants); });
-    };
     HomeIndexComponent.prototype.ngOnInit = function () {
     };
     HomeIndexComponent.prototype.goBack = function () {

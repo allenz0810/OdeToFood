@@ -3,5 +3,5 @@
     name: string;
     cuisine: number;
 
-    constructor() {}
+    constructor() { }
 }
