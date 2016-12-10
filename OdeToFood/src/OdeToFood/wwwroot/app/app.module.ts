@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeIndexComponent } from './home/index.component'
 import { HomeCreateComponent } from './home/create.component'
 import { HomeService } from './home/home.service';
+import { LoginComponent } from './account/login.component'
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { HomeService } from './home/home.service';
     declarations: [
         AppComponent,
         HomeIndexComponent,
-        HomeCreateComponent 
+        HomeCreateComponent,
+        LoginComponent
     ],
     providers: [HomeService],
     bootstrap: [AppComponent]

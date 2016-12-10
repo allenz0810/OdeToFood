@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var index_component_1 = require('./home/index.component');
 var create_component_1 = require('./home/create.component');
+var login_component_1 = require('./account/login.component');
 var routes = [
     { path: '', redirectTo: '/Home/Index', pathMatch: 'full' },
     { path: 'Home/Index', component: index_component_1.HomeIndexComponent },
-    { path: 'Home/Create', component: create_component_1.HomeCreateComponent }
+    { path: 'Home/Create', component: create_component_1.HomeCreateComponent },
+    { path: 'Account/Login', component: login_component_1.LoginComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

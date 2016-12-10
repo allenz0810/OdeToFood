@@ -17,6 +17,7 @@ var app_component_1 = require('./app.component');
 var index_component_1 = require('./home/index.component');
 var create_component_1 = require('./home/create.component');
 var home_service_1 = require('./home/home.service');
+var login_component_1 = require('./account/login.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,7 +32,8 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 index_component_1.HomeIndexComponent,
-                create_component_1.HomeCreateComponent
+                create_component_1.HomeCreateComponent,
+                login_component_1.LoginComponent
             ],
             providers: [home_service_1.HomeService],
             bootstrap: [app_component_1.AppComponent]
