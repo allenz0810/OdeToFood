@@ -12,12 +12,14 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var home_service_1 = require('./home.service');
+var Cuisine_1 = require('./Cuisine');
 var HomeIndexComponent = (function () {
     function HomeIndexComponent(homeService, route, location) {
         var _this = this;
         this.homeService = homeService;
         this.route = route;
         this.location = location;
+        this.CuisineEnum = Cuisine_1.CuisineEnum;
         this.getAll = function () {
             _this.homeService.getAll().then(function (data) { return _this.setRestaurants(data); });
         };

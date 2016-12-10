@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Restaurant } from './restaurant';
 import { KeyValuePair } from './keyvaluepair';
 import { HomeService } from './home.service';
+import { CuisineEnum } from './Cuisine';
 
 @Component({
     selector: 'home-index',
@@ -14,6 +15,7 @@ export class HomeIndexComponent implements OnInit {
 
 
     restaurants: Restaurant[];
+    CuisineEnum: typeof CuisineEnum = CuisineEnum;
 
     constructor(
         private homeService: HomeService,

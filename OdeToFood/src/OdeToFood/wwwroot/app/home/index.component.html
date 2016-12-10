@@ -4,7 +4,7 @@
         <div class="panel panel-default" *ngFor="let r of restaurants" >
             <h3 class="panel-heading">{{r.name}} <span class="glyphicon glyphicon-glass" aria-hidden="true"></span></h3>
             <div class="panel-body">
-                Cuisine: {{r.cuisine}}
+                Cuisine: {{CuisineEnum[r.cuisine]}}
             </div>
         </div>
     </div>
