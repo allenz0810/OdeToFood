@@ -9,8 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeIndexComponent } from './home/index.component'
 import { HomeCreateComponent } from './home/create.component'
-import { HomeService } from './home/home.service';
 import { LoginComponent } from './account/login.component'
+
+import { HomeService } from './home/home.service';
+import { AccountService } from './account/account.service'
 
 @NgModule({
     imports: [
@@ -25,7 +27,10 @@ import { LoginComponent } from './account/login.component'
         HomeCreateComponent,
         LoginComponent
     ],
-    providers: [HomeService],
+    providers: [
+        HomeService,
+        AccountService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

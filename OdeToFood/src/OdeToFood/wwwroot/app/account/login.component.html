@@ -1,13 +1,28 @@
-﻿<h1>Register</h1>
+﻿<h1>Login</h1>
 <div>
-    <div ></div>
-    <div>
-        <input type="text" name="Username" />
-    </div>
-    <div>
-        <input type="text" name="Password" />
-    </div>
-    <div>
-        <input type="button" value="Save" />
-    </div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name">User Name:</label>
+            <input type="text" class="form-control" id="name"
+                   required
+                   [(ngModel)]="user.name" name="name"
+                   #name="ngModel">
+            <div [hidden]="name.valid || name.pristine"
+                 class="alert alert-danger">
+                User Name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="power">Password:</label>
+            <input type="text" class="form-control" id="password"
+            required
+            [(ngModel)]="user.password" name="password"
+            #password="ngModel">
+            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                Password is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="loginForm.reset()">New Restaurant</button>
+    </form>
 </div>

@@ -8,14 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="user.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
+var user_1 = require('./user');
+var Account_Service_1 = require('./Account.Service');
 var LoginComponent = (function () {
-    function LoginComponent(route, location) {
+    function LoginComponent(route, location, accountService) {
         this.route = route;
         this.location = location;
+        this.accountService = accountService;
+        this.user = new user_1.User();
     }
+    LoginComponent.prototype.onSubmit = function () {
+        this.accountService.login(this.user);
+    };
     LoginComponent.prototype.ngOnInit = function () {
     };
     LoginComponent.prototype.goBack = function () {
@@ -26,7 +34,7 @@ var LoginComponent = (function () {
             selector: 'account-login',
             templateUrl: 'app/account/login.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location, Account_Service_1.AccountService])
     ], LoginComponent);
     return LoginComponent;
 }());
