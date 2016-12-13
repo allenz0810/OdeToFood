@@ -32,7 +32,8 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'account-login',
-            templateUrl: 'app/account/login.component.html'
+            templateUrl: 'app/account/login.component.html',
+            providers: [Account_Service_1.AccountService]
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location, Account_Service_1.AccountService])
     ], LoginComponent);

@@ -8,7 +8,8 @@ import { AccountService } from './Account.Service'
 
 @Component({
     selector: 'account-login',
-    templateUrl: 'app/account/login.component.html'
+    templateUrl: 'app/account/login.component.html',
+    providers: [AccountService]
 })
 export class LoginComponent implements OnInit {
 
