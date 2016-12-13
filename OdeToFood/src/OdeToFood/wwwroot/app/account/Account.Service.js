@@ -22,8 +22,15 @@ var AccountService = (function () {
         this.accounteUrl = 'account'; // URL to web api
     }
     AccountService.prototype.login = function (user) {
+        var _this = this;
+        var content = new http_1.URLSearchParams();
+        content.set('Username', user.userName);
+        content.set('Password', user.password);
         this.http
-            .post(this.accounteUrl + '/Login', { Username: user.userName, Password: user.password }, { headers: this.headers });
+            .post(this.accounteUrl + '/Login', content, { headers: this.headers })
+            .toPromise()
+            .then(function (src) { return _this.extractData(src); })
+            .catch(function (err) { return _this.handleError(err); });
     };
     AccountService.prototype.extractData = function (res) {
         var body = res.json();

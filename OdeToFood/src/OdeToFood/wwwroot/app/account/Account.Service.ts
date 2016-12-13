@@ -19,10 +19,16 @@ export class AccountService {
     constructor(private http: Http) { }
 
     login(user: User): void {
+        let content = new URLSearchParams();
+        content.set('Username', user.userName);
+        content.set('Password', user.password);
         this.http
             .post(this.accounteUrl + '/Login',
-            { Username: user.userName, Password : user.password},
-            { headers: this.headers });
+            content,
+            { headers: this.headers })
+            .toPromise()
+            .then(src => this.extractData(src))
+            .catch(err => this.handleError(err));
     }
 
     private extractData(res: Response) {
