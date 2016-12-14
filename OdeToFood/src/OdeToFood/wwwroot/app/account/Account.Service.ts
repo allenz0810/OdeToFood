@@ -27,8 +27,8 @@ export class AccountService {
             content,
             { headers: this.headers })
             .toPromise()
-            .then(src => this.extractData(src))
-            .catch(err => this.handleError(err));
+            .then()
+            .catch();
     }
 
     private extractData(res: Response) {

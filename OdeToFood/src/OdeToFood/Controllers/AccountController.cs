@@ -65,22 +65,20 @@ namespace OdeToFood.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel entity)
         {
-            if (ModelState.IsValid)
+
+            var loginResult = await _singInManager.PasswordSignInAsync(entity.Username, entity.Password, entity.RememberMe, false);
+            if (loginResult.Succeeded)
             {
-                var loginResult = await _singInManager.PasswordSignInAsync(entity.Username, entity.Password, entity.RememberMe, false);
-                if (loginResult.Succeeded)
+                if (Url.IsLocalUrl(entity.ReturnUrl))
                 {
-                    if (Url.IsLocalUrl(entity.ReturnUrl))
-                    {
-                        return Redirect(entity.ReturnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    return Redirect(entity.ReturnUrl);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
                 }
             }
-            ModelState.AddModelError("", "Could not login");
+
             return View();
         }
     }
