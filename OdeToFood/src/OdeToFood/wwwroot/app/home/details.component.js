@@ -19,7 +19,6 @@ var HomeCreateComponent = (function () {
         this.route = route;
         this.location = location;
         this.restaurant = new restaurant_1.Restaurant();
-        this.Data = "This is a data coming from create";
         this.cuisines = [
             { key: "None", value: 0 },
             { key: "Italian", value: 1 },
@@ -28,22 +27,17 @@ var HomeCreateComponent = (function () {
             { key: "Amercian", value: 4 }
         ];
     }
-    HomeCreateComponent.prototype.ngOnInit = function () {
+    HomeCreateComponent.prototype.getRestaurant = function () {
     };
-    HomeCreateComponent.prototype.onSubmit = function () {
-        var _this = this;
-        this.homeService.create(this.restaurant).then(function () { return _this.goBack(); });
+    HomeCreateComponent.prototype.ngOnInit = function () {
     };
     HomeCreateComponent.prototype.goBack = function () {
         this.location.back();
     };
-    HomeCreateComponent.prototype.add = function (name, cuisine) {
-        alert("name: (" + name + "), cuisine: (" + cuisine + ")");
-    };
     HomeCreateComponent = __decorate([
         core_1.Component({
-            selector: 'home-create',
-            templateUrl: 'app/home/create.component.html'
+            selector: 'home-detail',
+            templateUrl: 'app/home/details.component.html'
         }), 
         __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
     ], HomeCreateComponent);

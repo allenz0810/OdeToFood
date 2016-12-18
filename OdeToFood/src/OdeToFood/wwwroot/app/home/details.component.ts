@@ -7,14 +7,13 @@ import { KeyValuePair } from './keyvaluepair';
 import { HomeService } from './home.service';
 
 @Component({
-    selector: 'home-create',
-    templateUrl: 'app/home/create.component.html'
+    selector: 'home-detail',
+    templateUrl: 'app/home/details.component.html'
 })
 export class HomeCreateComponent implements OnInit {
 
     restaurant = new Restaurant();
 
-    Data: string = "This is a data coming from create";
     cuisines: KeyValuePair<number>[] = [
         { key: "None", value: 0 },
         { key: "Italian", value: 1 },
@@ -29,18 +28,14 @@ export class HomeCreateComponent implements OnInit {
         private location: Location
     ) { }
 
-    ngOnInit(): void {
+    getRestaurant(): void {
+
     }
 
-    onSubmit() {
-        this.homeService.create(this.restaurant).then(() => this.goBack());
+    ngOnInit(): void {
     }
 
     goBack(): void {
         this.location.back();
-    }
-
-    add(name: string, cuisine: string): void {
-        alert("name: (" + name + "), cuisine: (" + cuisine + ")");
     }
 }
