@@ -10,7 +10,7 @@
                 <div class="thumbnail">
                     <img src="../../images/dinner-thumbnail.png" alt="Restaurant" />
                     <div class="caption">
-                        <h3><a href="#">{{r.name}}</a></h3>
+                        <h3><a [routerLink]="['/Home/Details', r.id]">{{r.name}}</a></h3>
                         <p>Cuisine: {{CuisineEnum[r.cuisine]}}</p>
                     </div>
                 </div>

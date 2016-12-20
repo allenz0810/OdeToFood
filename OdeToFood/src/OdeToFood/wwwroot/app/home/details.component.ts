@@ -10,7 +10,7 @@ import { HomeService } from './home.service';
     selector: 'home-detail',
     templateUrl: 'app/home/details.component.html'
 })
-export class HomeCreateComponent implements OnInit {
+export class HomeDetailsComponent implements OnInit {
 
     restaurant = new Restaurant();
 
@@ -32,7 +32,18 @@ export class HomeCreateComponent implements OnInit {
 
     }
 
+    get = (id: number): void => {
+        this.homeService.get(id).then(
+            data => this.setRestaurants(data)
+        );
+    }
+
+    setRestaurants = (data): void => {
+        this.restaurant = data.restaurants;
+    }
+
     ngOnInit(): void {
+        this.get(this.route.params['id']);
     }
 
     goBack(): void {

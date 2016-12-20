@@ -40,6 +40,18 @@ export class HomeService {
             .catch(err => this.handleError(err));
     }
 
+    get(restaurantId: number): Promise<any> {
+        let content = new URLSearchParams();
+        content.set('restaurantId', restaurantId.toString());
+        return this.http
+            .post(this.homeUrl + '/Get',
+            content.toString(),
+            { headers: this.headers })
+            .toPromise()
+            .then(src => this.extractData(src))
+            .catch(err => this.handleError(err));
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body.data || {};

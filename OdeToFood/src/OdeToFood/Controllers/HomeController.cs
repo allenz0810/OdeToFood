@@ -25,6 +25,7 @@ namespace OdeToFood.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Details(int id)
         {
             var model = _restaurantData.Get(id);
@@ -35,6 +36,14 @@ namespace OdeToFood.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        public JsonResult Get(int restaurantId)
+        {
+            var model = _restaurantData.Get(restaurantId);
+
+            return Json(new { data = model });
         }
 
         [HttpGet]

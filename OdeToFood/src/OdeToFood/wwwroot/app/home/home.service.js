@@ -40,6 +40,16 @@ var HomeService = (function () {
             .then(function (src) { return _this.extractData(src); })
             .catch(function (err) { return _this.handleError(err); });
     };
+    HomeService.prototype.get = function (restaurantId) {
+        var _this = this;
+        var content = new http_1.URLSearchParams();
+        content.set('restaurantId', restaurantId.toString());
+        return this.http
+            .post(this.homeUrl + '/Get', content.toString(), { headers: this.headers })
+            .toPromise()
+            .then(function (src) { return _this.extractData(src); })
+            .catch(function (err) { return _this.handleError(err); });
+    };
     HomeService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};

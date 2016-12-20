@@ -7,12 +7,13 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeIndexComponent } from './home/index.component'
-import { HomeCreateComponent } from './home/create.component'
-import { LoginComponent } from './account/login.component'
+import { HomeIndexComponent } from './home/index.component';
+import { HomeCreateComponent } from './home/create.component';
+import { HomeDetailsComponent } from './home/details.component';
+import { LoginComponent } from './account/login.component';
 
 import { HomeService } from './home/home.service';
-import { AccountService } from './account/account.service'
+import { AccountService } from './account/account.service';
 
 @NgModule({
     imports: [
@@ -25,6 +26,7 @@ import { AccountService } from './account/account.service'
         AppComponent,
         HomeIndexComponent,
         HomeCreateComponent,
+        HomeDetailsComponent,
         LoginComponent
     ],
     providers: [

@@ -13,8 +13,9 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var restaurant_1 = require('./restaurant');
 var home_service_1 = require('./home.service');
-var HomeCreateComponent = (function () {
-    function HomeCreateComponent(homeService, route, location) {
+var HomeDetailsComponent = (function () {
+    function HomeDetailsComponent(homeService, route, location) {
+        var _this = this;
         this.homeService = homeService;
         this.route = route;
         this.location = location;
@@ -26,22 +27,29 @@ var HomeCreateComponent = (function () {
             { key: "Japanese", value: 3 },
             { key: "Amercian", value: 4 }
         ];
+        this.get = function (id) {
+            _this.homeService.get(id).then(function (data) { return _this.setRestaurants(data); });
+        };
+        this.setRestaurants = function (data) {
+            _this.restaurant = data.restaurants;
+        };
     }
-    HomeCreateComponent.prototype.getRestaurant = function () {
+    HomeDetailsComponent.prototype.getRestaurant = function () {
     };
-    HomeCreateComponent.prototype.ngOnInit = function () {
+    HomeDetailsComponent.prototype.ngOnInit = function () {
+        this.get(this.route.params['id']);
     };
-    HomeCreateComponent.prototype.goBack = function () {
+    HomeDetailsComponent.prototype.goBack = function () {
         this.location.back();
     };
-    HomeCreateComponent = __decorate([
+    HomeDetailsComponent = __decorate([
         core_1.Component({
             selector: 'home-detail',
             templateUrl: 'app/home/details.component.html'
         }), 
         __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
-    ], HomeCreateComponent);
-    return HomeCreateComponent;
+    ], HomeDetailsComponent);
+    return HomeDetailsComponent;
 }());
-exports.HomeCreateComponent = HomeCreateComponent;
+exports.HomeDetailsComponent = HomeDetailsComponent;
 //# sourceMappingURL=details.component.js.map
