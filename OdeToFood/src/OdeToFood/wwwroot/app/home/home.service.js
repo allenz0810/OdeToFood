@@ -55,7 +55,6 @@ var HomeService = (function () {
         return body.data || {};
     };
     HomeService.prototype.handleError = function (error) {
-        // In a real world app, we might use a remote logging infrastructure
         var errMsg;
         if (error instanceof http_1.Response) {
             var body = error.json() || '';

@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var restaurant_1 = require('./restaurant');
 var home_service_1 = require('./home.service');
+require('rxjs/add/operator/switchMap');
 var HomeDetailsComponent = (function () {
     function HomeDetailsComponent(homeService, route, location) {
         var _this = this;
@@ -27,17 +28,16 @@ var HomeDetailsComponent = (function () {
             { key: "Japanese", value: 3 },
             { key: "Amercian", value: 4 }
         ];
-        this.get = function (id) {
-            _this.homeService.get(id).then(function (data) { return _this.setRestaurants(data); });
-        };
-        this.setRestaurants = function (data) {
-            _this.restaurant = data.restaurants;
+        this.setRestaurant = function (data) {
+            _this.restaurant = data.restaurant;
         };
     }
     HomeDetailsComponent.prototype.getRestaurant = function () {
     };
     HomeDetailsComponent.prototype.ngOnInit = function () {
-        this.get(this.route.params['id']);
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.homeService.get(+params['id']).then(function (data) { return _this.setRestaurant(data); }); });
     };
     HomeDetailsComponent.prototype.goBack = function () {
         this.location.back();

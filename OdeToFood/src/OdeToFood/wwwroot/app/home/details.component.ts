@@ -6,6 +6,8 @@ import { Restaurant } from './restaurant';
 import { KeyValuePair } from './keyvaluepair';
 import { HomeService } from './home.service';
 
+import 'rxjs/add/operator/switchMap';
+
 @Component({
     selector: 'home-detail',
     templateUrl: 'app/home/details.component.html'
@@ -32,18 +34,13 @@ export class HomeDetailsComponent implements OnInit {
 
     }
 
-    get = (id: number): void => {
-        this.homeService.get(id).then(
-            data => this.setRestaurants(data)
-        );
-    }
-
-    setRestaurants = (data): void => {
-        this.restaurant = data.restaurants;
-    }
-
     ngOnInit(): void {
-        this.get(this.route.params['id']);
+        this.route.params
+            .switchMap((params: Params) => this.homeService.get(+params['id']).then(data => this.setRestaurant(data)));
+    }
+
+    setRestaurant = (data): void => {
+        this.restaurant = data.restaurant;
     }
 
     goBack(): void {
