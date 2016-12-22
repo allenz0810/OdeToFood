@@ -14,7 +14,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class HomeDetailsComponent implements OnInit {
 
-    restaurant = new Restaurant();
+    restaurant = Restaurant;
 
     cuisines: KeyValuePair<number>[] = [
         { key: "None", value: 0 },
@@ -36,7 +36,8 @@ export class HomeDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params
-            .switchMap((params: Params) => this.homeService.get(+params['id']).then(data => this.setRestaurant(data)));
+            .switchMap((params: Params) => this.homeService.getRestaurant(+params['id'])
+            .then(data => this.setRestaurant(data)));
     }
 
     setRestaurant = (data): void => {

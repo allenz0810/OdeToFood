@@ -20,7 +20,7 @@ var HomeDetailsComponent = (function () {
         this.homeService = homeService;
         this.route = route;
         this.location = location;
-        this.restaurant = new restaurant_1.Restaurant();
+        this.restaurant = restaurant_1.Restaurant;
         this.cuisines = [
             { key: "None", value: 0 },
             { key: "Italian", value: 1 },
@@ -37,7 +37,8 @@ var HomeDetailsComponent = (function () {
     HomeDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.homeService.get(+params['id']).then(function (data) { return _this.setRestaurant(data); }); });
+            .switchMap(function (params) { return _this.homeService.getRestaurant(+params['id'])
+            .then(function (data) { return _this.setRestaurant(data); }); });
     };
     HomeDetailsComponent.prototype.goBack = function () {
         this.location.back();

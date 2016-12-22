@@ -40,7 +40,7 @@ var HomeService = (function () {
             .then(function (src) { return _this.extractData(src); })
             .catch(function (err) { return _this.handleError(err); });
     };
-    HomeService.prototype.get = function (restaurantId) {
+    HomeService.prototype.getRestaurant = function (restaurantId) {
         var _this = this;
         var content = new http_1.URLSearchParams();
         content.set('restaurantId', restaurantId.toString());

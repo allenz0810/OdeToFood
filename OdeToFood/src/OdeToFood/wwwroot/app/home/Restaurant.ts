@@ -1,7 +1,7 @@
 ﻿export class Restaurant {
-    id: number;
-    name: string;
-    cuisine: number;
+    id: number = 0;
+    name: string = "";
+    cuisine: number = 0;
 
     constructor() { }
 }

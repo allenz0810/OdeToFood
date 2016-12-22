@@ -3,7 +3,7 @@
     <div class="form-group">
         <img src="../../images/dinner-thumbnail.png" />
     </div>
-    <div class="form-group">
+    <div *ngIf="restaurant" class="form-group">
         <h3>{{restaurant.name}}</h3>
         <p>Cuisine: {{CuisineEnum[restaurant.cuisine]}}</p>
     </div>
