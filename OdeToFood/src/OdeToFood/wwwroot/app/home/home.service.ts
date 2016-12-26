@@ -40,7 +40,7 @@ export class HomeService {
             .catch(err => this.handleError(err));
     }
 
-    getRestaurant(restaurantId: number): Promise<any> {
+    getRestaurant(restaurantId: number): Promise<Restaurant> {
         let content = new URLSearchParams();
         content.set('restaurantId', restaurantId.toString());
         return this.http

@@ -1,6 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import { Restaurant } from './restaurant';
 import { KeyValuePair } from './keyvaluepair';
@@ -13,8 +15,8 @@ import 'rxjs/add/operator/switchMap';
     templateUrl: 'app/home/details.component.html'
 })
 export class HomeDetailsComponent implements OnInit {
-
     restaurant = new Restaurant();
+    id = 0;
 
     cuisines: KeyValuePair<number>[] = [
         { key: "None", value: 0 },
@@ -29,22 +31,22 @@ export class HomeDetailsComponent implements OnInit {
         private route: ActivatedRoute,
         private location: Location
     ) {
-
-        this.route.params
-            .switchMap((params: Params) => this.homeService.getRestaurant(+params['id'])
-                .then(data => this.restaurant = data.restaurant));
-    }
-
-    getRestaurant(): void {
-
     }
 
     ngOnInit(): void {
-        
+         
+         this.route.params.subscribe(
+            (param: any) => {
+                this.id = param['id'];
+            });
+
+        this.homeService.getRestaurant(this.id).then(
+            data => this.setRestaurant(data)
+        );
     }
 
     setRestaurant = (data): void => {
-        this.restaurant = data.restaurant;
+        this.restaurant = data;
     }
 
     goBack(): void {
