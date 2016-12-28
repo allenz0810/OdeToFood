@@ -9,6 +9,7 @@ import { KeyValuePair } from './keyvaluepair';
 import { HomeService } from './home.service';
 
 import 'rxjs/add/operator/switchMap';
+import { CuisineEnum } from './Cuisine';
 
 @Component({
     selector: 'home-detail',
@@ -18,13 +19,7 @@ export class HomeDetailsComponent implements OnInit {
     restaurant = new Restaurant();
     id = 0;
 
-    cuisines: KeyValuePair<number>[] = [
-        { key: "None", value: 0 },
-        { key: "Italian", value: 1 },
-        { key: "French", value: 2 },
-        { key: "Japanese", value: 3 },
-        { key: "Amercian", value: 4 }
-    ];
+    CuisineEnum: typeof CuisineEnum = CuisineEnum;
 
     constructor(
         private homeService: HomeService,

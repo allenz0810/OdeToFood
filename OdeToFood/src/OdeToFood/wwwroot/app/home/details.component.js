@@ -14,6 +14,7 @@ var common_1 = require('@angular/common');
 var restaurant_1 = require('./restaurant');
 var home_service_1 = require('./home.service');
 require('rxjs/add/operator/switchMap');
+var Cuisine_1 = require('./Cuisine');
 var HomeDetailsComponent = (function () {
     function HomeDetailsComponent(homeService, route, location) {
         var _this = this;
@@ -22,13 +23,7 @@ var HomeDetailsComponent = (function () {
         this.location = location;
         this.restaurant = new restaurant_1.Restaurant();
         this.id = 0;
-        this.cuisines = [
-            { key: "None", value: 0 },
-            { key: "Italian", value: 1 },
-            { key: "French", value: 2 },
-            { key: "Japanese", value: 3 },
-            { key: "Amercian", value: 4 }
-        ];
+        this.CuisineEnum = Cuisine_1.CuisineEnum;
         this.setRestaurant = function (data) {
             _this.restaurant = data;
         };
