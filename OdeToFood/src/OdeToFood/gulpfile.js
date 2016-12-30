@@ -41,6 +41,11 @@ gulp.task('restore:angular-in-memory-web-api', function () {
         'node_modules/angular-in-memory-web-api/**/*.js'
     ]).pipe(gulp.dest(libs + 'angular-in-memory-web-api'));
 });
+gulp.task('restore:angular2-google-maps', function () {
+    gulp.src([
+        'node_modules/angular2-google-maps/**/*.js'
+    ]).pipe(gulp.dest(libs + 'angular2-google-maps'));
+});
 
 gulp.task('restore:angular', function () {
     gulp.src([
@@ -61,6 +66,7 @@ gulp.task('restore', [
     'restore:systemjs',
     'restore:rxjs',
     'restore:angular-in-memory-web-api',
+    'restore:angular2-google-maps',
     'restore:angular',
     'restore:bootstrap',
     'restore:systemjs',

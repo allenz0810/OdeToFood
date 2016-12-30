@@ -15,6 +15,9 @@ import { LoginComponent } from './account/login.component';
 import { HomeService } from './home/home.service';
 import { AccountService } from './account/account.service';
 
+// learning https://angular-maps.com/docs/getting-started.html
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 @NgModule({
     imports: [
         BrowserModule,
