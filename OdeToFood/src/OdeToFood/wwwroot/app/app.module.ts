@@ -16,6 +16,7 @@ import { HomeService } from './home/home.service';
 import { AccountService } from './account/account.service';
 
 // learning https://angular-maps.com/docs/getting-started.html
+// another version of google map http://playcode.org/angular-2-typescript-google-maps/
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AgmCoreModule.forRoot()
     ],
     declarations: [
         AppComponent,

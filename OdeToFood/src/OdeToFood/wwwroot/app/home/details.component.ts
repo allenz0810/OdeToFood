@@ -18,6 +18,8 @@ import { CuisineEnum } from './Cuisine';
 export class HomeDetailsComponent implements OnInit {
     restaurant = new Restaurant();
     id = 0;
+    lat: number = 51.678418;
+    lng: number = 7.809007;
 
     CuisineEnum: typeof CuisineEnum = CuisineEnum;
 
