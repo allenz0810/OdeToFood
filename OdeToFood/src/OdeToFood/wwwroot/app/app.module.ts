@@ -25,7 +25,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        AgmCoreModule.forRoot()
+        AgmCoreModule.forRoot("AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw")
     ],
     declarations: [
         AppComponent,

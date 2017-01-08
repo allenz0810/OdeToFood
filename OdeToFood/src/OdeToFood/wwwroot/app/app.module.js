@@ -33,7 +33,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule,
-                core_2.AgmCoreModule.forRoot()
+                core_2.AgmCoreModule.forRoot("AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw")
             ],
             declarations: [
                 app_component_1.AppComponent,
