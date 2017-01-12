@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,9 +15,6 @@ import { LoginComponent } from './account/login.component';
 
 import { HomeService } from './home/home.service';
 import { AccountService } from './account/account.service';
-
-// learning https://angular-maps.com/docs/getting-started.html
-// another version of google map http://playcode.org/angular-2-typescript-google-maps/
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
@@ -24,8 +22,11 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         BrowserModule,
         FormsModule,
         HttpModule,
+        CommonModule,
         AppRoutingModule,
-        AgmCoreModule.forRoot("AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw")
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw'
+        })
     ],
     declarations: [
         AppComponent,

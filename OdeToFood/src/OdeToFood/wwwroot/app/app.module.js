@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+var common_1 = require('@angular/common');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
 var index_component_1 = require('./home/index.component');
@@ -20,8 +21,6 @@ var details_component_1 = require('./home/details.component');
 var login_component_1 = require('./account/login.component');
 var home_service_1 = require('./home/home.service');
 var account_service_1 = require('./account/account.service');
-// learning https://angular-maps.com/docs/getting-started.html
-// another version of google map http://playcode.org/angular-2-typescript-google-maps/
 var core_2 = require('angular2-google-maps/core');
 var AppModule = (function () {
     function AppModule() {
@@ -32,8 +31,11 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
+                common_1.CommonModule,
                 app_routing_module_1.AppRoutingModule,
-                core_2.AgmCoreModule.forRoot("AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw")
+                core_2.AgmCoreModule.forRoot({
+                    apiKey: 'AIzaSyAOjEWu92pzgCd3p3kc8HNnpCIDyDHqiIw'
+                })
             ],
             declarations: [
                 app_component_1.AppComponent,
