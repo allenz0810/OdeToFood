@@ -43,7 +43,8 @@ var HomeDetailsComponent = (function () {
     HomeDetailsComponent = __decorate([
         core_1.Component({
             selector: 'home-detail',
-            templateUrl: 'app/home/details.component.html'
+            templateUrl: 'app/home/details.component.html',
+            styleUrls: ['app/home/details.component.css']
         }), 
         __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
     ], HomeDetailsComponent);

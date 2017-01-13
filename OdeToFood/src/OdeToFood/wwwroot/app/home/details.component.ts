@@ -13,7 +13,8 @@ import { CuisineEnum } from './Cuisine';
 
 @Component({
     selector: 'home-detail',
-    templateUrl: 'app/home/details.component.html'
+    templateUrl: 'app/home/details.component.html',
+    styleUrls: ['app/home/details.component.css']
 })
 export class HomeDetailsComponent implements OnInit {
     restaurant = new Restaurant();
