@@ -11,7 +11,6 @@ import { HomeService } from './home.service';
     templateUrl: 'app/home/create.component.html'
 })
 export class HomeCreateComponent implements OnInit {
-
     restaurant = new Restaurant();
 
     Data: string = "This is a data coming from create";
