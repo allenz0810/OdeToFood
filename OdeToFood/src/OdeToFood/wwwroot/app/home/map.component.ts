@@ -16,7 +16,7 @@ import 'rxjs/add/operator/switchMap';
     templateUrl: 'app/home/map.component.html',
     styleUrls: ['app/home/map.component.css']
 })
-export class MapDetailsComponent implements OnInit {
+export class HomeMapComponent implements OnInit {
     id = 0;
     lat: number = 51.678418;
     lng: number = 7.809007;
@@ -30,9 +30,6 @@ export class MapDetailsComponent implements OnInit {
 
     ngOnInit(): void {
 
-    }
-
-    setRestaurant = (data): void => {
     }
 
     goBack(): void {

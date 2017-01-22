@@ -13,31 +13,29 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var home_service_1 = require('./home.service');
 require('rxjs/add/operator/switchMap');
-var MapDetailsComponent = (function () {
-    function MapDetailsComponent(homeService, route, location) {
+var HomeMapComponent = (function () {
+    function HomeMapComponent(homeService, route, location) {
         this.homeService = homeService;
         this.route = route;
         this.location = location;
         this.id = 0;
         this.lat = 51.678418;
         this.lng = 7.809007;
-        this.setRestaurant = function (data) {
-        };
     }
-    MapDetailsComponent.prototype.ngOnInit = function () {
+    HomeMapComponent.prototype.ngOnInit = function () {
     };
-    MapDetailsComponent.prototype.goBack = function () {
+    HomeMapComponent.prototype.goBack = function () {
         this.location.back();
     };
-    MapDetailsComponent = __decorate([
+    HomeMapComponent = __decorate([
         core_1.Component({
             selector: 'home-map',
             templateUrl: 'app/home/map.component.html',
             styleUrls: ['app/home/map.component.css']
         }), 
         __metadata('design:paramtypes', [home_service_1.HomeService, router_1.ActivatedRoute, common_1.Location])
-    ], MapDetailsComponent);
-    return MapDetailsComponent;
+    ], HomeMapComponent);
+    return HomeMapComponent;
 }());
-exports.MapDetailsComponent = MapDetailsComponent;
+exports.HomeMapComponent = HomeMapComponent;
 //# sourceMappingURL=map.component.js.map

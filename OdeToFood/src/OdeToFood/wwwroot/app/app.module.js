@@ -18,6 +18,7 @@ var app_component_1 = require('./app.component');
 var index_component_1 = require('./home/index.component');
 var create_component_1 = require('./home/create.component');
 var details_component_1 = require('./home/details.component');
+var map_component_1 = require('./home/map.component');
 var login_component_1 = require('./account/login.component');
 var home_service_1 = require('./home/home.service');
 var account_service_1 = require('./account/account.service');
@@ -42,7 +43,8 @@ var AppModule = (function () {
                 index_component_1.HomeIndexComponent,
                 create_component_1.HomeCreateComponent,
                 details_component_1.HomeDetailsComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                map_component_1.HomeMapComponent
             ],
             providers: [
                 home_service_1.HomeService,
