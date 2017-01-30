@@ -12,6 +12,7 @@ import { HomeIndexComponent } from './home/index.component';
 import { HomeCreateComponent } from './home/create.component';
 import { HomeDetailsComponent } from './home/details.component';
 import { HomeMapComponent } from './home/map.component';
+import { HomeSearchComponent } from './home/search.component';
 import { LoginComponent } from './account/login.component';
 
 import { HomeService } from './home/home.service';
@@ -35,7 +36,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         HomeCreateComponent,
         HomeDetailsComponent,
         LoginComponent,
-        HomeMapComponent
+        HomeMapComponent,
+        HomeSearchComponent
     ],
     providers: [
         HomeService,

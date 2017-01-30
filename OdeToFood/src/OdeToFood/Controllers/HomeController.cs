@@ -58,6 +58,12 @@ namespace OdeToFood.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Search()
+        {
+            return View();
+        }
+
         [HttpPost]
         public bool Create(string name, int cuisine)
         {

@@ -15,11 +15,13 @@ var create_component_1 = require('./home/create.component');
 var details_component_1 = require('./home/details.component');
 var login_component_1 = require('./account/login.component');
 var map_component_1 = require('./home/map.component');
+var search_component_1 = require('./home/search.component');
 var routes = [
     { path: '', redirectTo: '/Home/Index', pathMatch: 'full' },
     { path: 'Home/Index', component: index_component_1.HomeIndexComponent },
     { path: 'Home/Create', component: create_component_1.HomeCreateComponent },
     { path: 'Home/Map', component: map_component_1.HomeMapComponent },
+    { path: 'Home/Search', component: search_component_1.HomeSearchComponent },
     { path: 'Home/Details/:id', component: details_component_1.HomeDetailsComponent },
     { path: 'Account/Login', component: login_component_1.LoginComponent }
 ];
